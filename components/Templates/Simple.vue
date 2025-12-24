@@ -62,11 +62,8 @@
         <a :href="acc.l" target="_blank" rel="noopener | noreferrer">
           <icon name="ph:linkedin-logo-duotone" class="h-6 w-6" />
         </a>
-      </span>      <span v-if="acc.l" class="p-1">
-        <a :href="acc.l" target="_blank" rel="noopener | noreferrer">
-          <icon name="ph:linkedin-logo-duotone" class="h-6 w-6" />
-        </a>
-      </span>    </div>
+      </span>
+    </div>
     <ul class="space-y-2">
       <ExternalLink
         v-for="(link, id) in acc.ls"
