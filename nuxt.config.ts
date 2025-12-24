@@ -1,5 +1,8 @@
 export default ({
     modules: ['@nuxtjs/tailwindcss', 'nuxt-icon', '@vueuse/nuxt', '@nuxtjs/color-mode'],
+    nitro: {
+        preset: 'cloudflare-pages'
+    },
     build: {
         transpile: ["@headlessui/vue"],
     },
