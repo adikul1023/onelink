@@ -1,4 +1,4 @@
-import { compressToEncodedURIComponent, decompressFromEncodedURIComponent } from "lz-string";
+import LZString from "lz-string";
 
 // Remove empty values to reduce data size
 const cleanData = (obj) => {
@@ -26,13 +26,13 @@ const cleanData = (obj) => {
 
 export const encodeData = (obj) => {
   const cleaned = cleanData(obj);
-  return compressToEncodedURIComponent(JSON.stringify(cleaned));
+  return LZString.compressToEncodedURIComponent(JSON.stringify(cleaned));
 };
 
 export const decodeData = (compressed) => {
   try {
     if (!compressed) return {};
-    const decompressed = decompressFromEncodedURIComponent(compressed);
+    const decompressed = LZString.decompressFromEncodedURIComponent(compressed);
     return JSON.parse(decompressed);
   } catch (error) {
     console.error("Error decoding data:", error);
