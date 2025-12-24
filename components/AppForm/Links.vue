@@ -1,7 +1,7 @@
 <template>
   <base-form-section title="Links" description="Add some links here">
     <template #helpertext>
-      <p class="mt-1 text-xs text-gray-600">
+      <p class="mt-1 text-xs text-gray-600 dark:text-slate-400">
         Icon keys can be found in
         <a class="underline" href="https://icones.js.org/"
           >https://icones.js.org/</a
@@ -19,22 +19,22 @@
           <button class="absolute top-2 -left-8">
             <icon
               name="radix-icons:drag-handle-dots-2"
-              class="h-6 w-6 text-slate-500 drag-handle"
+              class="h-6 w-6 text-slate-500 dark:text-slate-400 drag-handle"
             />
           </button>
           <button
             @click="removeLink(link)"
-            class="hidden group-hover:flex items-center justify-center h-6 w-6 rounded-full bg-slate-300 text-slate-600 absolute -right-3 -top-3"
+            class="hidden group-hover:flex items-center justify-center h-6 w-6 rounded-full bg-slate-300 dark:bg-slate-600 text-slate-600 dark:text-slate-300 absolute -right-3 -top-3"
           >
             <icon name="fluent:dismiss-24-regular" class="h-4 w-4" />
           </button>
           <div class="shadow sm:overflow-hidden sm:rounded-md">
-            <div class="space-y-6 bg-white px-4 py-5 sm:p-6">
+            <div class="space-y-6 bg-white dark:bg-slate-800 px-4 py-5 sm:p-6">
               <div class="grid grid-cols-2 gap-4">
                 <div>
                   <label
                     for="name"
-                    class="block text-sm font-medium text-gray-700"
+                    class="block text-sm font-medium text-gray-700 dark:text-slate-300"
                     >Icon Key (optional)</label
                   >
                   <input
@@ -42,13 +42,13 @@
                     name="iconKey"
                     id="iconKey"
                     v-model="link.i"
-                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                    class="mt-1 block w-full rounded-md border-gray-300 dark:border-slate-600 dark:bg-slate-700 dark:text-slate-100 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                   />
                 </div>
                 <div>
                   <label
                     for="label"
-                    class="block text-sm font-medium text-gray-700"
+                    class="block text-sm font-medium text-gray-700 dark:text-slate-300"
                     >Label</label
                   >
                   <input
@@ -56,13 +56,13 @@
                     name="label"
                     id="label"
                     v-model="link.l"
-                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                    class="mt-1 block w-full rounded-md border-gray-300 dark:border-slate-600 dark:bg-slate-700 dark:text-slate-100 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                   />
                 </div>
                 <div class="col-span-2">
                   <label
                     for="url"
-                    class="block text-sm font-medium text-gray-700"
+                    class="block text-sm font-medium text-gray-700 dark:text-slate-300"
                     >URL</label
                   >
                   <input
@@ -70,12 +70,12 @@
                     name="url"
                     id="url"
                     v-model="link.u"
-                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                    class="mt-1 block w-full rounded-md border-gray-300 dark:border-slate-600 dark:bg-slate-700 dark:text-slate-100 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                   />
                 </div>
               </div>
               <p
-                class="mt-2 text-xs text-center text-slate-400"
+                class="mt-2 text-xs text-center text-slate-400 dark:text-slate-500"
                 v-if="!link.l || !link.u"
               >
                 Link shown in preview once label and url are added
@@ -88,7 +88,7 @@
 
     <button
       @click="appendLink"
-      class="mt-8 border-2 text-slate-500 border-slate-300 rounded-lg block w-full py-2"
+      class="mt-8 border-2 text-slate-500 dark:text-slate-400 border-slate-300 dark:border-slate-600 rounded-lg block w-full py-2 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
     >
       <icon name="fluent:add-circle-24-regular" class="h-6 w-6" />
     </button>

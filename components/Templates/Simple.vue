@@ -1,41 +1,36 @@
 <template>
-  <main class="p-4 bg-white h-full w-full space-y-8 pt-12 max-w-lg mx-auto">
-    <div class="text-center">
+  <main class="p-4 h-full min-h-screen w-full space-y-8 pt-12 max-w-lg mx-auto transition-colors duration-300">
+    <div class="text-center animate-fade-in">
       <div
         v-if="acc.i"
-        class="h-20 w-20 rounded-full overflow-hidden ring ring-slate-200 mx-auto"
+        class="h-20 w-20 rounded-full overflow-hidden ring ring-slate-200 dark:ring-slate-700 mx-auto transition-all duration-300 hover:scale-105"
       >
         <img :src="acc.i" alt="name" class="h-full w-full object-cover" />
       </div>
-      <h1 v-if="acc.n" class="text-2xl font-bold mt-4 text-slate-800">
+      <h1 v-if="acc.n" class="text-2xl font-bold mt-4 text-slate-800 dark:text-slate-100">
         {{ acc.n }}
       </h1>
-      <p v-if="acc.d" class="text-sm mt-2 text-slate-600">
+      <p v-if="acc.d" class="text-sm mt-2 text-slate-600 dark:text-slate-400">
         {{ acc.d }}
       </p>
     </div>
     <div
       v-if="!allSocialLinksAreEmpty"
-      class="flex items-center justify-center flex-wrap"
+      class="flex items-center justify-center flex-wrap text-slate-700"
     >
       <span v-if="acc.f" class="p-1">
         <a :href="acc.f" target="_blank" rel="noopener | noreferrer">
           <icon name="ph:facebook-logo-duotone" class="h-6 w-6" />
         </a>
       </span>
-      <span v-if="acc.t" class="p-1">
-        <a :href="acc.t" target="_blank" rel="noopener | noreferrer">
+      <span v-if="acc.tw" class="p-1">
+        <a :href="acc.tw" target="_blank" rel="noopener | noreferrer">
           <icon name="ph:twitter-logo-duotone" class="h-6 w-6" />
         </a>
       </span>
       <span v-if="acc.ig" class="p-1">
         <a :href="acc.ig" target="_blank" rel="noopener | noreferrer">
           <icon name="ph:instagram-logo-duotone" class="h-6 w-6" />
-        </a>
-      </span>
-      <span v-if="acc.m" class="p-1">
-        <a :href="acc.m" target="_blank" rel="noopener | noreferrer">
-          <icon name="ph:envelope-duotone" class="h-6 w-6" />
         </a>
       </span>
       <span v-if="acc.tg" class="p-1">
@@ -67,8 +62,11 @@
         <a :href="acc.l" target="_blank" rel="noopener | noreferrer">
           <icon name="ph:linkedin-logo-duotone" class="h-6 w-6" />
         </a>
-      </span>
-    </div>
+      </span>      <span v-if="acc.l" class="p-1">
+        <a :href="acc.l" target="_blank" rel="noopener | noreferrer">
+          <icon name="ph:linkedin-logo-duotone" class="h-6 w-6" />
+        </a>
+      </span>    </div>
     <ul class="space-y-2">
       <ExternalLink
         v-for="(link, id) in acc.ls"
@@ -91,7 +89,7 @@ const props = defineProps({
 const allSocialLinksAreEmpty = computed(() => {
   return (
     !props.acc.f &&
-    !props.acc.t &&
+    !props.acc.tw &&
     !props.acc.ig &&
     !props.acc.m &&
     !props.acc.tg &&
@@ -103,4 +101,19 @@ const allSocialLinksAreEmpty = computed(() => {
   );
 });
 </script>
-<style scoped></style>
+<style scoped>
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out;
+}
+</style>

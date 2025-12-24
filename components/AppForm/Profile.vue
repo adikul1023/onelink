@@ -4,9 +4,9 @@
     description="Some public information about you"
   >
     <div class="shadow sm:overflow-hidden sm:rounded-md">
-      <div class="space-y-6 bg-white px-4 py-5 sm:p-6">
+      <div class="space-y-6 bg-white dark:bg-slate-800 px-4 py-5 sm:p-6">
         <div class="col-span-6 sm:col-span-3">
-          <label for="name" class="block text-sm font-medium text-gray-700"
+          <label for="name" class="block text-sm font-medium text-gray-700 dark:text-slate-300"
             >Name</label
           >
           <input
@@ -16,11 +16,11 @@
             autocomplete="given-name"
             :value="name"
             @input="$emit('update:name', $event.target.value)"
-            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+            class="mt-1 block w-full rounded-md border-gray-300 dark:border-slate-600 dark:bg-slate-700 dark:text-slate-100 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
           />
         </div>
         <div>
-          <label for="about" class="block text-sm font-medium text-gray-700"
+          <label for="about" class="block text-sm font-medium text-gray-700 dark:text-slate-300"
             >About yourself</label
           >
           <div class="mt-1">
@@ -28,7 +28,7 @@
               id="about"
               name="about"
               rows="3"
-              class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm placeholder-slate-400"
+              class="mt-1 block w-full rounded-md border-gray-300 dark:border-slate-600 dark:bg-slate-700 dark:text-slate-100 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm placeholder-slate-400 dark:placeholder-slate-500"
               placeholder="I am an astronaut"
               maxlength="100"
               :value="desc"
@@ -38,14 +38,14 @@
         </div>
 
         <div class="flex-grow col-span-6 sm:col-span-3">
-          <label for="photo-url" class="block text-sm font-medium text-gray-700"
+          <label for="photo-url" class="block text-sm font-medium text-gray-700 dark:text-slate-300"
             >Photo Url</label
           >
           <input
             type="text"
             name="photo-url"
             id="photo-url"
-            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+            class="mt-1 block w-full rounded-md border-gray-300 dark:border-slate-600 dark:bg-slate-700 dark:text-slate-100 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
             :value="image"
             @input="$emit('update:image', $event.target.value)"
           />
